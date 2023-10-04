@@ -18,6 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "browser": "chrome",
   "eslintConfig": {
     "extends": [
       "react-app",
