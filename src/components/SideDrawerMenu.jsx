@@ -24,6 +24,7 @@ const SideDrawerMenu = (props) => {
         setIsHome(true);
         setIsDiscover(false);
         setIsLibrary(false);
+        toggleSideMenu(false);
     }
 
     // choose discover
@@ -45,7 +46,7 @@ const SideDrawerMenu = (props) => {
 
             {/* Overlay */}
             {props.nav ? (
-                <div className=' opacity-50 h-screen w-full fixed z-10 top-0 left-0 duration-300 bg-[#212121]'></div>
+                <div className=' opacity-50 h-screen w-full fixed z-10 top-0 left-0 duration-300 bg-[#212121]' ></div>
             ) : (
                 ""
             )}
@@ -79,10 +80,10 @@ const SideDrawerMenu = (props) => {
                             </a></li>}
 
 
-                        <SidebarDiscover isDiscover={isDiscover} setDiscover={setDiscover} />
+                        <SidebarDiscover isDiscover={isDiscover} setDiscover={setDiscover} toggleSideMenu={toggleSideMenu}/>
 
 
-                        <SidebarLibrary isLibrary={isLibrary} setLibrary={setLibrary} />
+                        <SidebarLibrary isLibrary={isLibrary} setLibrary={setLibrary} toggleSideMenu={toggleSideMenu}/>
 
                     </ul>
                 </div>

@@ -8,6 +8,7 @@ const SidebarDiscover = (props) => {
 
     const toggleSelect = () => {
         props.setDiscover(!props.isDiscover);
+        props.toggleSideMenu(false);
     }
 
     return (

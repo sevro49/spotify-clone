@@ -9,6 +9,7 @@ const SidebarLibrary = (props) => {
 
     const toggleSelect = () => {
         props.setLibrary(!props.isLibrary);
+        props.toggleSideMenu(false);
     }
 
     return (
