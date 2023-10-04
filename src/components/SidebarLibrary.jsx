@@ -16,7 +16,7 @@ const SidebarLibrary = (props) => {
         <div>
             {props.isLibrary
                 ?
-                <li><a href="#" className='flex gap-3 text-2xl mb-2 p-1 bg-[#181818] hover:bg-[#212121] duration-150' onClick={toggleSelect}>
+                <li><a href="#" className='flex gap-3 text-2xl mb-2 p-1 bg-[#181818]  duration-150' onClick={toggleSelect}>
                     <MdLibraryMusic size={30} className='text-[#1DB954]' />
                     <span>Library</span>
                 </a></li>

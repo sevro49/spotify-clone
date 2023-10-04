@@ -37,15 +37,16 @@ const Header = () => {
       {/* Buttons */}
       {/* <JoinAndDownloadBtn/> */}
 
+
+      {/* Mobile Menu */}
+      
+      <SideDrawerMenu nav={nav} updateSideMenu={updateSideMenu}/>
       {/* Profile */}
       <div className='flex items-center'>
         <button className='w-10'>
           <img src={profileIcon} alt="profile-icon" />
         </button>
       </div>
-
-      {/* Mobile Menu */}
-      <SideDrawerMenu nav={nav} updateSideMenu={updateSideMenu}/>
     </div>
   )
 }

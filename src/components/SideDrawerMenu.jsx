@@ -68,7 +68,7 @@ const SideDrawerMenu = (props) => {
                         {/* Sidebar Home */}
                         {isHome
                             ?
-                            <li><a href="#" className='flex gap-3 text-2xl mb-2 p-1 bg-[#181818] hover:bg-[#212121] duration-150' onClick={setHome}>
+                            <li><a href="#" className='flex gap-3 text-2xl mb-2 p-1 bg-[#181818] duration-150' onClick={setHome}>
                                 <AiFillHome size={30} className='text-[#1DB954]' />
                                 <span>Home</span>
                             </a></li>
