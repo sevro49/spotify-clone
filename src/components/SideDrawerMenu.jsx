@@ -42,8 +42,7 @@ const SideDrawerMenu = (props) => {
     }
 
     return (
-        <div>
-
+        <>
             {/* Overlay */}
             {props.nav ? (
                 <div className=' opacity-50 h-screen w-full fixed z-10 top-0 left-0 duration-300 bg-[#212121]' ></div>
@@ -88,7 +87,7 @@ const SideDrawerMenu = (props) => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </>
 
     )
 }
