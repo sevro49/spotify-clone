@@ -57,7 +57,7 @@ const SideDrawerMenu = (props) => {
                     : "fixed top-0 left-[-100%] w-[300px] h-screen bg-[#252525] z-10 duration-300"
             }>
 
-                <AiOutlineClose onClick={toggleSideMenu} className='text-3xl text-white absolute right-4 top-4 cursor-pointer' />
+                <AiOutlineClose onClick={toggleSideMenu} className='text-3xl text-white absolute right-4 top-4 cursor-pointer rounded-sm active:bg-[#212121]' />
 
 
                 {/* Elements */}
