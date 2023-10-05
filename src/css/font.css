@@ -1,5 +1,5 @@
 @font-face {
     font-family: 'Kaleko-105';
-    src: local('Kaleko-105'),
-         url('../assets/font/kaleko-105-cufonfonts/Kaleko105Book.ttf') format('woff'),
+    src: 
+         url('../assets/font/kaleko-105-cufonfonts/Kaleko105Book.ttf');
 }
