@@ -3,8 +3,6 @@ import React from 'react'
 // icons
 import { MdOutlineLibraryMusic, MdLibraryMusic } from "react-icons/md";
 
-
-
 const SidebarLibrary = (props) => {
 
     const toggleSelect = () => {
@@ -22,7 +20,7 @@ const SidebarLibrary = (props) => {
                 </a></li>
 
                 :
-                <li><a href="#" className='flex gap-3 text-2xl mb-2 p-1 hover:bg-[#212121] duration-150' onClick={toggleSelect}>
+                <li><a href="#" className='flex gap-3 text-2xl p-1 hover:bg-[#212121] duration-150' onClick={toggleSelect}>
                     <MdOutlineLibraryMusic size={30} className='text-[#1DB954]' />
                     <span>Library</span>
                 </a></li>}

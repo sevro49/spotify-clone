@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 // components
 import SidebarDiscover from './SidebarDiscover';
 import SidebarLibrary from './SidebarLibrary';
+import SidebarMenuPlaylists from './SidebarMenuPlaylists';
 
 // icons
-import { AiOutlineClose, AiOutlineHome, AiFillHome, AiOutlineCompass, AiFillCompass } from "react-icons/ai";
-import { MdOutlineLibraryMusic, MdLibraryMusic } from "react-icons/md";
+import { AiOutlineClose, AiOutlineHome, AiFillHome } from "react-icons/ai";
 
 const SideDrawerMenu = (props) => {
 
@@ -79,12 +79,20 @@ const SideDrawerMenu = (props) => {
                             </a></li>}
 
 
-                        <SidebarDiscover isDiscover={isDiscover} setDiscover={setDiscover} toggleSideMenu={toggleSideMenu}/>
+                        <SidebarDiscover isDiscover={isDiscover} setDiscover={setDiscover} toggleSideMenu={toggleSideMenu} />
 
 
-                        <SidebarLibrary isLibrary={isLibrary} setLibrary={setLibrary} toggleSideMenu={toggleSideMenu}/>
+                        <SidebarLibrary isLibrary={isLibrary} setLibrary={setLibrary} toggleSideMenu={toggleSideMenu} />
+
 
                     </ul>
+                </div>
+
+                <div className='relative top-48'>
+                    {/* Divider */}
+                    <div className='relative border-t-2 my-4 mx-auto w-[240px] border-[#303030]'></div>
+
+                    <SidebarMenuPlaylists/>
                 </div>
             </div>
         </>
