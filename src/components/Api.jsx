@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const ApiRequest = () => {
 
@@ -8,30 +8,47 @@ const ApiRequest = () => {
     const apiKey = process.env.REACT_APP_API_KEY;
     const playlistId = 'RDCLAK5uy_lFuA--WIEukXUJ93HkgnVOv0Bs02c_O4g';
 
-    fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=50`)
-      .then(response => response.json())
-      .then(data => {
-        setPlaylistData(data);
+    const fetchData = async () => {
+      try {
+        // Playlist items (songs, song ids etc.)
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=200`);
+        const data = await response.json();
 
-        // Bir sonraki sayfa için
-        if (data.nextPageToken) {
-          fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=50&pageToken=${data.nextPageToken}`)
-            .then(response => response.json())
-            .then(nextData => {
-              setPlaylistData(prevData => ({
-                ...prevData,
-                items: [...prevData.items, ...nextData.items]
-              }));
-              console.log(data)
-            })
-            .catch(error => console.error('Error:', error));
-        }
-      })
-      .catch(error => console.error('Error:', error));
+        console.log('Playlist Items:', data);
+
+        // Playlist info (playlist title, id etc.)
+        const playlistInfoResponse = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${apiKey}`);
+        const playlistInfoData = await playlistInfoResponse.json();
+
+        console.log('Playlist Info:', playlistInfoData);
+
+        const formattedData = data.items.map(item => {
+          return {
+            id: item.id,
+            title: item.snippet.title,
+            description: item.snippet.description,
+            publishedAt: item.snippet.publishedAt,
+            thumbnails: item.snippet.thumbnails
+          };
+        });
+
+        const playlistInfo = playlistInfoData.items[0].snippet; // Oynatma listesi bilgileri
+
+        setPlaylistData({ playlistInfo, playlistItems: formattedData });
+        
+        console.log("Formatted Data:", formattedData?.[0])
+      } 
+      catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-    
-    
+
+
+
   return (
     <div></div>
   )
