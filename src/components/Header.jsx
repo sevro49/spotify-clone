@@ -36,7 +36,9 @@ const Header = () => {
 
         <SearchBar />
 
-        {/* Buttons */}
+        {/* Buttons 
+        ! we'll show if you don't log in
+        */}
         {/* <JoinAndDownloadBtn/> */}
 
 
