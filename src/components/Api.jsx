@@ -4,6 +4,7 @@ const ApiRequest = () => {
 
   const [playlistData, setPlaylistData] = useState(null);
 
+  // Make a request to api
   useEffect(() => {
     const apiKey = process.env.REACT_APP_API_KEY;
     const playlistId = 'RDCLAK5uy_lFuA--WIEukXUJ93HkgnVOv0Bs02c_O4g';
@@ -36,6 +37,7 @@ const ApiRequest = () => {
 
         setPlaylistData({ playlistInfo, playlistItems: formattedData });
         
+        // First songs data
         console.log("Formatted Data:", formattedData?.[0])
       } 
       catch (error) {
@@ -46,11 +48,8 @@ const ApiRequest = () => {
     fetchData();
   }, []);
 
-
-
-
   return (
-    <div></div>
+    <></>
   )
 }
 

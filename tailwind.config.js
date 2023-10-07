@@ -9,6 +9,9 @@ module.exports = {
         '105': '1.05',
       }
     },
+    borderWidth:{
+      DEFAULT: '1px',
+    },
   },
   plugins: [],
 }
