@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react'
 
 // img
-import testImg from "../assets/img/png/test-playlist-img.jpg";
+import testImg from "../assets/img/png/test-playlist-img2.jpg";
 
-const RecommendedPlaylist = (props) => {
+const OfficeRadio = (props) => {
     const [scrollLeftDisabled, setScrollLeftDisabled] = useState(true);
     const [scrollRightDisabled, setScrollRightDisabled] = useState(false);
 
@@ -12,7 +12,7 @@ const RecommendedPlaylist = (props) => {
     // Moves horizontal scroll
     const handleScroll = (direction) => {
         const scrollAmount = 1090;
-        const playlists = document.getElementById("recommendedPlaylists");
+        const playlists = document.getElementById("officeRadio");
 
         if (direction === "left") {
             playlists.scrollLeft -= scrollAmount;
@@ -23,9 +23,9 @@ const RecommendedPlaylist = (props) => {
 
     // Runs whenever scoll position changes, actives and disables scroll buttons
     const handleScrollChange = () => {
-        const playlists = document.getElementById("recommendedPlaylists");
-        const scrollLeftButton = document.getElementById("recommendedPlaylist-scrollLeft");
-        const scrollRightButton = document.getElementById("recommendedPlaylist-scrollRight");
+        const playlists = document.getElementById("officeRadio");
+        const scrollLeftButton = document.getElementById("officeRadio-scrollLeft");
+        const scrollRightButton = document.getElementById("officeRadio-scrollRight");
 
         if (playlists.scrollLeft === 0) {
             // Reached the beginning
@@ -54,17 +54,17 @@ const RecommendedPlaylist = (props) => {
         <div className='mt-16 '>
 
             {/* Section Header */}
-            <div className='recommended-playlists__header flex items-center justify-between'>
+            <div className='office-radio__header flex items-center justify-between'>
 
                 {/* Section Title */}
-                <h1 className='text-3xl font-bold'>Recommended Playlists</h1>
+                <h1 className='text-3xl font-bold'>Office Radio</h1>
 
                 {/* right/left icons */}
                 <div className='flex items-center gap-2'>
-                    <button id='recommendedPlaylist-scrollLeft' disabled={scrollLeftDisabled} onClick={() => handleScroll("left")} className='rounded-full p-1 duration-300 border border-[#404040] opacity-20'>
+                    <button id='officeRadio-scrollLeft' disabled={scrollLeftDisabled} onClick={() => handleScroll("left")} className='rounded-full p-1 duration-300 border border-[#404040] opacity-20'>
                         <props.AiOutlineLeft size={30} />
                     </button>
-                    <button id='recommendedPlaylist-scrollRight' disabled={scrollRightDisabled} onClick={() => handleScroll("right")} className='rounded-full p-1 duration-300 hover:bg-[#404040] border border-[#404040]'>
+                    <button id='officeRadio-scrollRight' disabled={scrollRightDisabled} onClick={() => handleScroll("right")} className='rounded-full p-1 duration-300 hover:bg-[#404040] border border-[#404040]'>
                         <props.AiOutlineRight size={30} />
                     </button>
                 </div>
@@ -72,10 +72,10 @@ const RecommendedPlaylist = (props) => {
             </div>
 
             {/*Section Body */}
-            <div id="recommendedPlaylists" className="h-[300px] reacommended-playlists__body flex items-center gap-5 mt-5 overflow-y-hidden scrollbar-hide overflow-x-scroll scroll-smooth"
+            <div id="officeRadio" className="h-[300px] office-radio__body flex items-center gap-5 mt-5 overflow-y-hidden scrollbar-hide overflow-x-scroll scroll-smooth"
                 onScroll={handleScrollChange} ref={playlistsRef}>
                 {/* Playlist */}
-                <div className="block recommended-playlists__body-playlist bg-[#181818] p-2 rounded-md max-w-[200px] max-h-[300px] hover:-translate-y-2 duration-300 cursor-pointer shadow-lg">
+                <div className="office-radio__body-playlist bg-[#181818] p-2 rounded-md max-w-[200px] max-h-[300px] hover:-translate-y-2 duration-300 cursor-pointer shadow-lg">
 
                     {/* Playlist Header */}
                     <div className="playlist-header">
@@ -230,4 +230,4 @@ const RecommendedPlaylist = (props) => {
     )
 }
 
-export default RecommendedPlaylist
+export default OfficeRadio
