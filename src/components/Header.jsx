@@ -34,7 +34,7 @@ const Header = () => {
           </button>
         </div>
 
-        <SearchBar />
+        <SearchBar className="hidden"/>
 
         {/* Buttons 
         ! we'll show if you don't log in

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import SidebarDiscover from './SidebarDiscover';
 import SidebarLibrary from './SidebarLibrary';
 import SidebarMenuPlaylists from './SidebarMenuPlaylists';
+import SideDrawerMenuSearchBar from './SideDrawerMenuSearchBar';
 
 // icons
 import { AiOutlineClose, AiOutlineHome, AiFillHome } from "react-icons/ai";
@@ -56,12 +57,16 @@ const SideDrawerMenu = (props) => {
                     ? "fixed top-0 left-0 w-[300px] h-screen bg-[#252525] z-10 duration-300"
                     : "fixed top-0 left-[-100%] w-[300px] h-screen bg-[#252525] z-10 duration-300"
             }>
+                <div className='w-full flex justify-end'>
+                    <AiOutlineClose onClick={toggleSideMenu} className='text-3xl text-white relative right-1 top-1 cursor-pointer rounded-sm active:bg-[#212121]' />
+                </div>
 
-                <AiOutlineClose onClick={toggleSideMenu} className='text-3xl text-white absolute right-4 top-4 cursor-pointer rounded-sm active:bg-[#212121]' />
-
+                <div className='mt-4'>
+                    <SideDrawerMenuSearchBar />
+                </div>
 
                 {/* Elements */}
-                <div className='absolute ps-4 pe-4 top-14 w-full'>
+                <div className=' ps-4 pe-4 mt-4  w-full'>
                     <ul>
 
                         {/* Sidebar Home */}
@@ -88,11 +93,11 @@ const SideDrawerMenu = (props) => {
                     </ul>
                 </div>
 
-                <div className='relative top-48'>
+                <div>
                     {/* Divider */}
-                    <div className='relative border-t-2 my-4 mx-auto w-[240px] border-[#303030]'></div>
+                    <div className='border border-t-1 my-4 mx-auto w-[240px] border-[#181818]'></div>
 
-                    <SidebarMenuPlaylists/>
+                    <SidebarMenuPlaylists />
                 </div>
             </div>
         </>

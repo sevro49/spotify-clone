@@ -3,9 +3,9 @@ import React from 'react'
 // icons
 import { LiaSearchSolid } from "react-icons/lia";
 
-const SearchBar = () => {
+const SideDrawerMenuSearchBar = () => {
     return (
-        <div className='hidden md:block'>
+        <div className='block md:hidden p-4'>
             <div className='flex items-center gap-1 relative'>
                 <button className='ml-2 text-xl inset-y-0 left-0 absolute text-gray-400'>
                     <LiaSearchSolid />
@@ -16,4 +16,4 @@ const SearchBar = () => {
     )
 }
 
-export default SearchBar
+export default SideDrawerMenuSearchBar
